@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-netflix-red: #E50914;
+  --color-netflix-red-dark: #B20710;
+  --color-netflix-black: #141414;
+  --color-netflix-dark: #1a1a1a;
+  --color-netflix-gray: #2a2a2a;
+  --color-netflix-light-gray: #404040;
+  --color-netflix-text: #e5e5e5;
+  --color-netflix-text-muted: #808080;
+  --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-netflix-black);
+  color: var(--color-netflix-text);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-netflix-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-netflix-light-gray);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-netflix-text-muted);
+}
+
+/* Skeleton animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--color-netflix-gray) 25%, var(--color-netflix-light-gray) 50%, var(--color-netflix-gray) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
